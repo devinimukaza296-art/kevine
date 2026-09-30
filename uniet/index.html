@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Université Étoile - Tableau de Bord</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barre de Navigation -->
+    <nav class="navbar">
+        <div class="logo">🌟 Université Étoile</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Tableau de bord</a></li>
+            <li><a href="etudiants.html">Étudiants</a></li>
+            <li><a href="paiements.html">Paiements / Caisse</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>📊 Situation Financière Globale</h1>
+            <!-- Bouton de sauvegarde de secours -->
+            <button id="btn-export" class="btn-secondary">💾 Exporter la Base de Données (.json)</button>
+        </div>
+
+        <!-- Section des Cartes de Statistiques (KPI) -->
+        <div class="kpi-grid">
+            <div class="kpi-card text-primary">
+                <h3>Étudiants Inscrits</h3>
+                <p id="kpi-total-etudiants" class="kpi-value">0</p>
+                <span>Effectif global enregistré</span>
+            </div>
+            <div class="kpi-card text-success">
+                <h3>Total Encaissé</h3>
+                <p id="kpi-total-percu" class="kpi-value">0 USD</p>
+                <span>Fonds collectés en caisse</span>
+            </div>
+            <div class="kpi-card text-warning">
+                <h3>Taux de Recouvrement</h3>
+                <p id="kpi-taux-recouvrement" class="kpi-value">0 %</p>
+                <span>Par rapport aux prévisions attendues</span>
+            </div>
+        </div>
+
+        <div class="grid-layout" style="margin-top: 30px;">
+            <!-- Aperçu des dernières transactions -->
+            <div class="card table-container" style="flex: 2;">
+                <h2>Journal des 5 dernières transactions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reçu N°</th>
+                            <th>Matricule</th>
+                            <th>Type de Frais</th>
+                            <th>Montant</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboard-recent-body">
+                        <!-- Rempli dynamiquement -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Rappel de la grille des tarifs de l'université -->
+            <div class="card" style="flex: 1;">
+                <h2>Grille des Tarifs Fixes</h2>
+                <ul class="tarifs-liste">
+                    <li><strong>Frais d'Inscription :</strong> 50 USD</li>
+                    <li><strong>Minerval Annuel :</strong> 300 USD</li>
+                    <li><strong>Enrôlement aux Examens :</strong> 20 USD</li>
+                </ul>
+                <div class="info-box" style="margin-top: 20px;">
+                    <p>💡 <em>Les calculs de taux et de soldes se basent sur ces valeurs institutionnelles fondamentales.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chargement des scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Université Étoile - Étudiants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🌟 Université Étoile</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Tableau de bord</a></li>
+            <li><a href="etudiants.html" class="active">Étudiants</a></li>
+            <li><a href="paiements.html">Paiements / Caisse</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>🎓 Répertoire des Étudiants</h1>
+        <div class="grid">
+            <div class="card">
+                <h2>Inscrire un étudiant</h2>
+                <form id="form-etudiant">
+                    <div class="form-group">
+                        <label>Matricule</label>
+                        <input type="text" id="matricule" placeholder="UE-2026-003" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nom</label>
+                        <input type="text" id="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Prénom</label>
+                        <input type="text" id="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Faculté</label>
+                        <select id="faculte" required>
+                            <option value="Sciences Informatiques">Sciences Informatiques</option>
+                            <option value="Droit">Droit</option>
+                            <option value="Médecine">Médecine</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Promotion</label>
+                        <input type="text" id="promotion" placeholder="L1 LMD" required>
+                    </div>
+                    <button type="submit" class="btn">Enregistrer l'étudiant</button>
+                </form>
+            </div>
+
+            <div class="card" style="flex: 2;">
+                <h2>Liste des étudiants</h2>
+                <input type="text" id="search" placeholder="🔍 Rechercher par nom ou matricule..." style="margin-bottom: 15px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Faculté</th>
+                            <th>Promotion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="liste-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/etudiants.js"></script>
+</body>
+</html>

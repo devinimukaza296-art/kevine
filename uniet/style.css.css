@@ -1,0 +1,335 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES & THÈME DE L'UNIVERSITÉ ÉTOILE
+   ========================================================================== */
+:root {
+    --primary-color: #0b1d3a;     /* Bleu Nuit Institutionnel */
+    --secondary-color: #f1c40f;   /* Jaune Or Étoile */
+    --bg-light: #f4f7f6;          /* Gris clair pour le fond de l'application */
+    --text-dark: #2c3e50;         /* Couleur du texte principal */
+    --card-bg: #ffffff;           /* Fond blanc pour les blocs */
+    --success-color: #27ae60;     /* Vert pour les encaissements positifs */
+    --danger-color: #c0392b;      /* Rouge pour les erreurs/alertes */
+    --border-color: #dcdde1;      /* Gris pour les lignes de séparation */
+}
+
+/* ==========================================================================
+   2. REINITIALISATION ET STYLES DE BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+/* ==========================================================================
+   3. BARRE DE NAVIGATION (NAVBAR)
+   ========================================================================== */
+.navbar {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   4. STRUCTURE DE LA MISE EN PAGE (GRID & LAYOUT)
+   ========================================================================== */
+.grid-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 320px;
+}
+
+.table-container {
+    flex: 2;
+}
+
+/* ==========================================================================
+   5. COMPOSANTS DE FORMULAIRE
+   ========================================================================== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #16325c;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   6. TABLEAUX ET ENCART D'INFORMATION
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f8f9fa;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #fafdff;
+}
+
+.search-box {
+    margin-bottom: 15px;
+}
+
+.badge {
+    background-color: #e1f5fe;
+    color: #0288d1;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.info-box {
+    background-color: #fffde7;
+    border-left: 4px solid var(--secondary-color);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.text-success { color: var(--success-color); font-weight: bold; }
+.text-danger { color: var(--danger-color); font-weight: bold; }
+
+/* ==========================================================================
+   7. TABLEAU DE BORD (DASHBOARD) MODULE
+   ========================================================================== */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 15fr));
+    gap: 20px;
+}
+
+.kpi-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--border-color);
+}
+
+.kpi-card.text-primary { border-top-color: var(--primary-color); }
+.kpi-card.text-success { border-top-color: var(--success-color); }
+.kpi-card.text-warning { border-top-color: var(--secondary-color); }
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.kpi-card span {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.tarifs-liste {
+    list-style: none;
+}
+.tarifs-liste li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+/* ==========================================================================
+   8. GESTION ADMINISTRATIVE DE L'IMPRESSION (REÇU)
+   ========================================================================== */
+/* Par défaut à l'écran : On cache la zone du reçu officiel */
+.print-only {
+    display: none;
+}
+
+/* Déclenchement des règles lors de l'appel à window.print() */
+@media print {
+    /* Masquer tous les composants de l'application web */
+    .no-print, .navbar, .container, button, input, select, .card {
+        display: none !important;
+    }
+
+    /* Forcer l'affichage du conteneur du reçu */
+    .print-only {
+        display: block !important;
+        width: 100%;
+        padding: 30px;
+        color: #000000;
+        background-color: #ffffff;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    .recu-header {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .recu-header h2 {
+        border-bottom: none;
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+
+    .table-recu {
+        width: 100%;
+        margin: 20px 0;
+        border: 1px solid #000000;
+    }
+
+    .table-recu th, .table-recu td {
+        border: 1px solid #000000;
+        padding: 10px;
+    }
+
+    .table-recu th {
+        background-color: #f2f2f2 !important;
+        -webkit-print-color-adjust: exact; /* Forcer le fond gris à l'impression browser */
+        print-color-adjust: exact;
+    }
+}

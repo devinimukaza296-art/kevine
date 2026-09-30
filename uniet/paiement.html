@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Université Étoile - Caisse</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar no-print">
+        <div class="logo">🌟 Université Étoile</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Tableau de bord</a></li>
+            <li><a href="etudiants.html">Étudiants</a></li>
+            <li><a href="paiements.html" class="active">Paiements / Caisse</a></li>
+        </ul>
+    </nav>
+
+    <div class="container no-print">
+        <h1>💳 Caisse & Perception</h1>
+        <div class="grid">
+            <div class="card">
+                <h2>Percevoir un montant</h2>
+                <form id="form-paiement">
+                    <div class="form-group">
+                        <label>Étudiant</label>
+                        <select id="select-etudiant" required>
+                            <option value="">-- Choisir --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Type de frais</label>
+                        <select id="type-frais" required>
+                            <option value="Inscription">Inscription (50 USD)</option>
+                            <option value="Minerval">Minerval (300 USD)</option>
+                            <option value="Enrolement">Enrôlement (20 USD)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Montant à verser (USD)</label>
+                        <input type="number" id="montant" required>
+                    </div>
+                    <button type="submit" class="btn">Encaisser</button>
+                </form>
+            </div>
+
+            <div class="card" style="flex: 2;">
+                <h2>Historique de Caisse</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reçu N°</th>
+                            <th>Matricule</th>
+                            <th>Frais</th>
+                            <th>Montant</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paiements-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="recu" class="print-only">
+        <h2>UNIVERSITÉ ÉTOILE - REÇU DE PAIEMENT</h2>
+        <hr><br>
+        <p><strong>Reçu N° :</strong> <span id="r-id"></span></p>
+        <p><strong>Étudiant (Matricule) :</strong> <span id="r-mat"></span></p>
+        <p><strong>Motif de Versement :</strong> <span id="r-type"></span></p>
+        <p><strong>Montant validé :</strong> <span id="r-montant"></span> USD</p>
+        <p><strong>Date :</strong> <span id="r-date"></span></p>
+        <br><br>
+        <p style="text-align: right;">Sceau du Caissier de l'Université</p>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/paiements.js"></script>
+</body>
+</html>
